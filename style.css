@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+html {
+  height:100%;
+}
+
+body {
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  padding-top: 57px;
+}
+
+.statBar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(92, 92, 92);
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.currentSpot {
+  text-transform: capitalize;
+}
+
+.tricksIndicator {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.gameTitle {
+  padding-bottom: 20px;
+}
+
+.gameDescription {
+  padding-bottom: 20px;
+}
+
+.inputSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.infoIcon {
+  font-size: 22px;
+  font-weight: bold;
+  border: solid 3px black;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  min-width: 30px;
+  margin-bottom: 10px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltipText {
+  letter-spacing: 1px;
+  width: max-content;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: left;
+  visibility: hidden;
+  background-color: rgb(92, 92, 92);
+  color: white;
+  position: absolute;
+  top: 150%;
+  margin-left: -30px;
+  padding: 20px;
+  border-radius: 5px;
+  line-height: 16px;
+}
+
+hr {
+  border: .5px solid;
+}
+
+.tooltip .tooltipText::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 25%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgb(92, 92, 92) transparent;
+}
+
+.tooltip:hover .tooltipText {
+  visibility: visible;
+}
+
+.tooltipBreak {
+  margin: 0 -10px;
+}
+
+.userInput {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin: 0px 20px 10px 20px;
+}
+
+.gameText p {
+  color: slateblue;
+  padding: 20px 0;
+  line-height: 1.25em;
+}

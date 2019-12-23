@@ -1,1 +1,55 @@
-Sk8 Zork
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sk8 Zork</title>
+  <link rel="icon" data-emoji="🛹" type="image/png">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <nav class="statBar">
+    <p class="spotIndicator">Spot: <span class="currentSpot"></span></p>
+    <p class="tricksIndicator">Tricks: <span class="trickCount">0</span></p>
+    <p class="turnsIndicator">Turns: <span class="turnCount">0</span></p>
+  </nav>
+  <h1 class="gameTitle">Sk8 Zork</h1>
+  <h3 class="gameDescription">You're a skater on a filming trip in a new city and you need to film 3 tricks to finish your new part.</h3>
+  <div class="inputSection">
+    <div class="infoIcon tooltip">i
+      <div class="tooltipText">
+        <b>NON-TURN COMMANDS:</b><br>
+        <i>pickup</i> &lt;item&gt;<br><i>look around</i></br><i>examine</i></br><i>inventory</i><br><br>
+        <hr class="tooltipBreak">
+        <br>
+        <b>ACTIONS:</b><br>
+        <i>go</i> &lt;direction&gt;<br>
+        <i>skate</i> &lt;spot&gt;<br>
+        <i>use</i> &lt;item&gt;
+      </div>
+    </div>
+    <input class="userInput" type="search" placeholder="" />
+  </div>
+  <div class="gameText"></div>
+  <script type="text/javascript" src="spots.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!-- Favicon script-->
+  <script>
+    const favicon = document.querySelector("link[rel=icon]");
+    if (favicon) {
+      const emoji = favicon.getAttribute("data-emoji");
+      if (emoji) {
+        const canvas = document.createElement("canvas");
+        canvas.height = 64;
+        canvas.width = 64;
+        const ctx = canvas.getContext("2d");
+        ctx.font = "64px serif";
+        ctx.fillText(emoji, 0, 64);
+        favicon.href = canvas.toDataURL();
+      }
+    }
+  </script>
+  <!-- END Favicon script -->
+</body>
+</html>
