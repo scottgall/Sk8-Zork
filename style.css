@@ -27,7 +27,14 @@ body {
   padding: 10px 20px;
 }
 
+.spotIndicator {
+  padding-right: 20px;
+}
 .currentSpot {
+  text-transform: capitalize;
+}
+
+.copSpot {
   text-transform: capitalize;
 }
 

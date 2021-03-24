@@ -1,11 +1,17 @@
 let keys = Object.keys(spots);
-let currentSpot = keys[ keys.length * Math.random() << 0];
+let currentSpot = keys[keys.length * Math.random() << 0];
 let supplies = [];
 let tricks = [];
 let turns = 0;
 let fixedSpots = [];
 
+let index = keys.indexOf(currentSpot)
+keys.splice(index, 1)
+let copSpot = keys[keys.length * Math.random() << 0];
+console.log(copSpot)
+
 const currentSpotNode = document.querySelector(`.currentSpot`);
+const copSpotNode = document.querySelector(`.copSpot`);
 const trickCountNode = document.querySelector(`.trickCount`);
 const turnsCountNode = document.querySelector(`.turnCount`);
 
@@ -13,7 +19,7 @@ function increaseTurn() {
   turnsCountNode.innerHTML = ++turns;
 }
 
-function changeRoom(dir) {
+function changeSpot(dir) {
   if (spots[currentSpot].directions[dir] !== undefined) {
     currentSpot = spots[currentSpot].directions[dir];
     currentSpotNode.innerHTML = currentSpot;
@@ -46,7 +52,7 @@ function lookAround() {
 
 function pickup(item) {
   if (spots[currentSpot].examine[item] === undefined) {
-    printToDom(`There is no ${item}.`);
+    printToDom(`There is no ${item} to skate.`);
   } else {
     increaseTurn();
     printToDom(`You picked up ${item}. ${spots[currentSpot].examine.icon}`);
@@ -98,7 +104,7 @@ function playerInput(input) {
   const param = input.split(` `)[1];
   switch(command) {
     case `go`:
-      changeRoom(param);
+      changeSpot(param);
       break;
     case `examine`:
       examine();
@@ -124,11 +130,13 @@ function playerInput(input) {
 };
 
 document.addEventListener(`keydown`, e => {
-  let input = document.querySelector(`.userInput`);
-  if (e.keyCode === 13 && document.activeElement === input) {
+  let input = document.querySelector(`.userInput`),
+      key = e.key,
+      keyCode = e.keyCode;
+  if ((key && 'Enter' === key || keyCode && 13 === keyCode) && document.activeElement === input) {
     playerInput(input.value.toLowerCase());
     input.value = '';
-  }
+  };
 });
 
 function printToDom(str) {
@@ -138,3 +146,4 @@ function printToDom(str) {
 
 printToDom(spots[currentSpot].description);
 currentSpotNode.innerHTML = currentSpot;
+copSpotNode.innerHTML = copSpot;
