@@ -4,6 +4,9 @@
   margin: 0;
   font-family: sans-serif;
 }
+.add {
+  height: 100%
+}
 
 html {
   height:100%;
