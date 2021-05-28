@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+.ok {
+  color: hotpink;
+}
+
 html {
   height:100%;
 }
