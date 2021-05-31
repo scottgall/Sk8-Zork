@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+.added {
+  background: hotpink;
+}
+
 html {
   height:100%;
 }
