@@ -16,10 +16,6 @@ body {
   padding-top: 57px;
 }
 
-.added {
-  background: indigo;
-}
-
 .statBar {
   display: flex;
   position: absolute;
